@@ -1,7 +1,10 @@
 # IronTinder
 
+<br>
+
 ## Description
 
+<br>
 ## User Stories
 
 - **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
@@ -12,18 +15,16 @@
 - **logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account.
 - **edit user** - As a user I want to be able to edit my profile.
 
+<br>
+
 ## Server Routes(Back-end):
 
-|    Method    |    Route      |   Description  |  Request - Body |
-|--------------|---------------|----------------|-----------------|
-|<mark>GET</mark>|      /        | Main page route home index view               |                 |
-|--------------|---------------|----------------|-----------------|
-|<mark>GET</mark>  |    /signup    |                |                 |
-|--------------|---------------|----------------|-----------------|
-|<mark>POST</mark>|    /signup    |                |                 |
-|--------------|---------------|----------------|-----------------|
-|<mark>GET</mark>|      /        |                |                 |
-|--------------|---------------|----------------|-----------------|
-|<mark>POST</mark>|      /        |                |                 |
-|--------------|---------------|----------------|-----------------|
-|<mark>GET</mark>|      /        |                |                 |
+|**Method**    |    **Route**           |   **Description**                 |  **Request - Body** |
+|--------------|------------------------|-----------------------------------|---------------------|
+|`GET`         |      `/`               | Main page route home index view   |                     |
+|`GET`         |    `/signup`           |                                   |                     |
+|`POST`        |    `/signup`           |                                   |                     |
+|`GET`         |      `/`               |                                   |                     |
+|`POST`        |      `/`               |                                   |                     |
+|`GET`         |      `/`               |                                   |                     |
+
