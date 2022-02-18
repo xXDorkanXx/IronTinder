@@ -19,6 +19,7 @@
 
 ## Server Routes(Back-end):
 
+
 |**Method**    |    **View**           |    **Route**     |   **Description**       |          **Request - Body**                     |
 |--------------|-------------------|------------------------|-----------------------------------|---------------------|
 |`GET`         |   `index` or `swipe`            |      `/`               | Main page route home `index` index view. If logged redirect `/swipe`  |   {req.session.userID} |
@@ -36,4 +37,13 @@
 |`POST`        |     `profile`         |      `/profile/:userId/add-newPhoto`  | Sends the img to server, update DB. Then render `profile` view  | {req.file.path}  |
 |`POST`         |     `profile`         |      `/profile/:userId/delete-photo/:photoId` | Delete img from DB. Then render `profile`view | {req.params.id}      |
 |`GET`         |     `matches`        |      `/matches/:userId` | Render `matches` view | {req.session.id}                    |
+=======
+|**Method**    |    **Route**           |   **Description**                 |  **Request - Body** |
+|--------------|------------------------|-----------------------------------|---------------------|
+|`GET`         |      `/`               | Main page route home index view   |                     |
+|`GET`         |    `/signup`           |                                   |                     |
+|`POST`        |    `/signup`           |                                   |                     |
+|`GET`         |      `/`               |                                   |                     |
+|`POST`        |      `/`               |                                   |                     |
+|`GET`         |      `/`               |                                   |                     |
 
