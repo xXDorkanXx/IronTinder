@@ -19,6 +19,25 @@
 
 ## Server Routes(Back-end):
 
+
+|**Method**    |    **View**           |    **Route**     |   **Description**       |          **Request - Body**                     |
+|--------------|-------------------|------------------------|-----------------------------------|---------------------|
+|`GET`         |   `index` or `swipe`            |      `/`               | Main page route home `index` index view. If logged redirect `/swipe`  |   {req.session.userID} |
+|`GET`         | `signup`            |    `/signup`           | Render `signup` form view          |                     |
+|`POST`        |  `swipe`           |    `/signup`           | Send signup data to server and creates user in DB. Then redirect to `/swipe`                                   | {username, password, age, name, interests, aboutme, campus, profileImg}                    |
+|`GET`         |  `login`           |      `/login`          | Render `login`form view           |                     |
+|`POST`        |   `swipe`          |      `/login`          | Sends login data to server and redirects to `/swipe`     | {username, password}            |
+|`GET`         |   `swipe`          |      `/swipe/show/:userId`           | Render `swipe` view                | {req.session.filter}    |
+|`POST`        |    `swipe`         |      `/swipe/like/:userId/:likedId`     | Sends ObjID of liked user to server. Check for matches. Then redirect to `/swipe`  | {req.params.id, req.session.userID} |
+|`POST`         |   `swipe`            |      `/swipe/dislike/:userId/:dislikedId`  | Sends objID of disliked user to server. Then redirects to `/swipe`  | {req.params.id, req.session.userID}                    |
+|`POST`        |     `swipe`          |      `/swipe/filter/:userId`    | Sends filter option to the server. Add the filter to the current session. Then redirects to `/swipe`   | {req.session.userID, req.session.filter} |
+|`GET`         |     `profile`        |      `/profile/:userId`        | Render `profile` view             | {req.sessionId}                    |
+|`POST`        |    `profile`         |      `/profile/:userId/edit-imgProfile` | Sends the new image to the server, update DB. Then render `profile` view  | {req.session.userID, req.file.path}  |
+|`POST`        |   `profile`           |      `/profile/:userId/edit-infoProfile`  | Sends the new data to server, update DB. Then render `profile` view  | {name, interests, aboutme}|
+|`POST`        |     `profile`         |      `/profile/:userId/add-newPhoto`  | Sends the img to server, update DB. Then render `profile` view  | {req.file.path}  |
+|`POST`         |     `profile`         |      `/profile/:userId/delete-photo/:photoId` | Delete img from DB. Then render `profile`view | {req.params.id}      |
+|`GET`         |     `matches`        |      `/matches/:userId` | Render `matches` view | {req.session.id}                    |
+=======
 |**Method**    |    **Route**           |   **Description**                 |  **Request - Body** |
 |--------------|------------------------|-----------------------------------|---------------------|
 |`GET`         |      `/`               | Main page route home index view   |                     |
